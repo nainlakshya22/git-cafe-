@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop All | Glitter Bean Café</title>
+    <meta name="description" content="Preview page for Shop All | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <link rel="canonical" href="https://git-cafe-nine.vercel.app/shop.html" />
+    <meta property="og:title" content="Shop All | Glitter Bean Café" />
+    <meta property="og:description" content="Preview page for Shop All | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <meta property="og:url" content="https://git-cafe-nine.vercel.app/shop.html" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -19,11 +25,14 @@
           <a href="gift-cards.html">Gift Cards</a>
           <a href="subscriptions.html">Subscriptions</a>
           <a href="story.html">Our Story</a>
-          <a href="events.html">Events</a>\r\n          <a href="catering.html">Catering</a>\r\n          <a href="faq.html">FAQ</a>\r\n          <a href="contact.html">Visit</a>
+          <a href="events.html">Events</a>
+          <a href="catering.html">Catering</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Visit</a>
         </nav>
         <div class="nav-actions">
           <button class="icon-button" aria-label="Search">⌕</button>
-          <a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">2</span></a>
+          <a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a>
         </div>
       </div>
     </header>
@@ -44,27 +53,24 @@
         <div class="container">
           <div class="filters">
             <div class="filter-bar">
-              <button class="filter-pill active">All</button>
-              <button class="filter-pill">Coffee Beans</button>
-              <button class="filter-pill">Signature Coffee</button>
-              <button class="filter-pill">Specialty Blends</button>
-              <button class="filter-pill">Merchandise</button>
-              <button class="filter-pill">Gift Cards</button>
-              <button class="filter-pill">Subscriptions</button>
+              <button class="filter-pill active" type="button" data-filter="all">All</button>
+              <button class="filter-pill" type="button" data-filter="coffee">Coffee Beans</button>
+              <button class="filter-pill" type="button" data-filter="signature">Signature Drinks</button>
+              <button class="filter-pill" type="button" data-filter="merch">Merchandise</button>
+              <button class="filter-pill" type="button" data-filter="gifts">Gift Cards</button>
+              <button class="filter-pill" type="button" data-filter="subscriptions">Subscriptions</button>
             </div>
             <div class="sort-wrap">
               <label for="sort">Sort by</label>
               <select id="sort">
-                <option>Featured</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-                <option>Popularity</option>
-                <option>New Arrivals</option>
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
               </select>
             </div>
           </div>
 
-          <div class="products-grid">
+          <div class="products-grid" data-catalog="all">
             <article class="product-card">
               <div class="product-media"><div class="product-badges"><span class="product-badge">Best seller</span></div><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80" alt="Sunrise Bloom" /></div>
               <div class="product-info">
@@ -74,6 +80,7 @@
                 <div class="product-meta"><span class="price">$24</span><span class="availability in-stock">In stock</span></div>
                 <div class="product-actions"><button class="small-btn primary-btn">Quick Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div>
               </div>
+              <p data-empty-search hidden role="status">No matching products in this preview. Try another search or filter.</p>
             </article>
             <article class="product-card">
               <div class="product-media"><div class="product-badges"><span class="product-badge">New</span></div><img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=900&q=80" alt="Velvet Mocha" /></div>
@@ -171,8 +178,8 @@
             <ul class="footer-links">
               <li>5896 Spring Garden Road</li>
               <li>Halifax, NS</li>
-              <li>+1 902-407-5715</li>
-              <li>glitterbeancafe@gmail.com</li>
+              <li><a href="tel:+19024075715">+1 902-407-5715</a></li>
+              <li><a href="mailto:glitterbeancafe@gmail.com">glitterbeancafe@gmail.com</a></li>
             </ul>
           </div>
           <div>
@@ -183,6 +190,8 @@
         <div class="footer-bottom"><span>© 2026 Glitter Bean Café</span><span>Crafted with sparkle</span></div>
       </div>
     </footer>
+      <script src="catalog.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
 

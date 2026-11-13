@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Merchandise | Glitter Bean Café</title>
+    <meta name="description" content="Preview page for Merchandise | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <link rel="canonical" href="https://git-cafe-nine.vercel.app/merch.html" />
+    <meta property="og:title" content="Merchandise | Glitter Bean Café" />
+    <meta property="og:description" content="Preview page for Merchandise | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <meta property="og:url" content="https://git-cafe-nine.vercel.app/merch.html" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -19,9 +25,12 @@
           <a href="gift-cards.html">Gift Cards</a>
           <a href="subscriptions.html">Subscriptions</a>
           <a href="story.html">Our Story</a>
-          <a href="events.html">Events</a>\r\n          <a href="catering.html">Catering</a>\r\n          <a href="faq.html">FAQ</a>\r\n          <a href="contact.html">Visit</a>
+          <a href="events.html">Events</a>
+          <a href="catering.html">Catering</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Visit</a>
         </nav>
-        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">2</span></a></div>
+        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a></div>
       </div>
     </header>
 
@@ -38,7 +47,7 @@
       </section>
 
       <section class="section">
-        <div class="container products-grid">
+        <div class="container products-grid" data-catalog="merch">
           <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=80" alt="Beanery tote" /></div><div class="product-info"><div class="product-category">Bag</div><h3>Beanery Tote</h3><p>Canvas carryall for your market haul and daily essentials.</p><div class="product-meta"><span class="price">$22</span><span class="availability in-stock">Ready</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
           <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" alt="Mug" /></div><div class="product-info"><div class="product-category">Ceramics</div><h3>Glow Mug</h3><p>Stoneware cup made for long sips and bright mornings.</p><div class="product-meta"><span class="price">$18</span><span class="availability in-stock">Ready</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
           <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="Bean club shirt" /></div><div class="product-info"><div class="product-category">Apparel</div><h3>Bean Club Tee</h3><p>Soft cotton tee with a subtle café logo and oversized fit.</p><div class="product-meta"><span class="price">$32</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
@@ -49,10 +58,12 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li>+1 902-407-5715</li><li>glitterbeancafe@gmail.com</li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Instagram</span><span>Facebook</span></div></div></div>
+        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li><a href="tel:+19024075715">+1 902-407-5715</a></li><li><a href="mailto:glitterbeancafe@gmail.com">glitterbeancafe@gmail.com</a></li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Instagram</span><span>Facebook</span></div></div></div>
         <div class="footer-bottom"><span>© 2026 Glitter Bean Café</span><span>Crafted with sparkle</span></div>
       </div>
     </footer>
+      <script src="catalog.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
 

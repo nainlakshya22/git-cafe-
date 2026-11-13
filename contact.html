@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact & Visit | Glitter Bean Café</title>
+    <meta name="description" content="Preview page for Contact & Visit | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <link rel="canonical" href="https://git-cafe-nine.vercel.app/contact.html" />
+    <meta property="og:title" content="Contact & Visit | Glitter Bean Café" />
+    <meta property="og:description" content="Preview page for Contact & Visit | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <meta property="og:url" content="https://git-cafe-nine.vercel.app/contact.html" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -22,7 +28,7 @@
           <a href="events.html">Events</a>
           <a class="active" href="contact.html">Visit</a>
         </nav>
-        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">2</span></a></div>
+        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a></div>
       </div>
     </header>
 
@@ -32,7 +38,7 @@
           <div>
             <div class="breadcrumb">Visit / Contact</div>
             <h1>Contact & Visit</h1>
-            <p>Find us in the heart of Halifax and plan your next coffee catch-up with us.</p>
+            <p>Contact the café to confirm current location details and opening hours before visiting.</p>
           </div>
           <a class="primary-btn" href="catering.html">Plan a private event</a>
         </div>
@@ -43,18 +49,18 @@
           <div class="contact-card">
             <h3>Visit the café</h3>
             <div class="info-stack">
-              <div class="info-item"><strong>Address</strong><br />5896 Spring Garden Road<br />Halifax, Nova Scotia, Canada</div>
-              <div class="info-item"><strong>Phone</strong><br />+1 902-407-5715</div>
-              <div class="info-item"><strong>Email</strong><br />glitterbeancafe@gmail.com</div>
-              <div class="info-item"><strong>Hours</strong><br />Mon–Sun: 7:30 AM – 7:00 PM</div>
+              <div class="info-item"><strong>Address</strong><br />5896 Spring Garden Road<br />Halifax, Nova Scotia, Canada<br /><a href="https://www.google.com/maps/search/?api=1&amp;query=5896+Spring+Garden+Road+Halifax+Nova+Scotia" target="_blank" rel="noopener noreferrer">Directions (confirm address before visiting)</a></div>
+              <div class="info-item"><strong>Phone</strong><br /><a href="tel:+19024075715">+1 902-407-5715</a></div>
+              <div class="info-item"><strong>Email</strong><br /><a href="mailto:glitterbeancafe@gmail.com">glitterbeancafe@gmail.com</a></div>
+              <div class="info-item"><strong>Hours</strong><br />Please contact the café for current opening hours.</div>
             </div>
           </div>
           <div class="contact-card">
             <h3>Send a note</h3>
             <form>
-              <div class="form-field"><label>Name</label><input type="text" value="" placeholder="Your name" /></div>
-              <div class="form-field"><label>Email</label><input type="email" value="" placeholder="Email address" /></div>
-              <div class="form-field"><label>Message</label><textarea placeholder="Tell us what you’re looking for..."></textarea></div>
+              <div class="form-field"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required placeholder="Your name" /></div>
+              <div class="form-field"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" autocomplete="email" required placeholder="Email address" /></div>
+              <div class="form-field"><label for="contact-message">Message</label><textarea id="contact-message" name="message" required placeholder="Tell us what you’re looking for..."></textarea></div>
               <button type="submit" class="primary-btn">Send Message</button>
             </form>
           </div>
@@ -64,9 +70,11 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li>+1 902-407-5715</li><li>glitterbeancafe@gmail.com</li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Instagram</span><span>Facebook</span></div></div></div>
+        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li><a href="tel:+19024075715">+1 902-407-5715</a></li><li><a href="mailto:glitterbeancafe@gmail.com">glitterbeancafe@gmail.com</a></li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Instagram</span><span>Facebook</span></div></div></div>
         <div class="footer-bottom"><span>© 2026 Glitter Bean Café</span><span>Crafted with sparkle</span></div>
       </div>
     </footer>
+      <script src="catalog.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

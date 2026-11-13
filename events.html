@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events & Community | Glitter Bean Café</title>
+    <meta name="description" content="Preview page for Events & Community | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <link rel="canonical" href="https://git-cafe-nine.vercel.app/events.html" />
+    <meta property="og:title" content="Events & Community | Glitter Bean Café" />
+    <meta property="og:description" content="Preview page for Events & Community | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <meta property="og:url" content="https://git-cafe-nine.vercel.app/events.html" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -22,7 +28,7 @@
           <a class="active" href="events.html">Events</a>
           <a href="contact.html">Visit</a>
         </nav>
-        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">2</span></a></div>
+        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a></div>
       </div>
     </header>
 
@@ -32,26 +38,30 @@
           <div>
             <div class="breadcrumb">Community / Events</div>
             <h1>Events & Community</h1>
-            <p>Gatherings, workshops, and local moments designed to make Halifax feel a little brighter.</p>
+            <p>Contact the café for verified upcoming events and community programming.</p>
           </div>
           <a class="primary-btn" href="gallery.html">Gallery</a>
         </div>
       </section>
 
       <section class="section">
-        <div class="container event-cards">
-          <article class="event-card"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Open mic night" /><div class="event-body"><div class="event-meta">Thursday • 7:00 PM</div><h3>Open Mic Night</h3><p>Bring your poems, songs, or stories and enjoy a warm crowd and good coffee.</p></div></article>
-          <article class="event-card"><img src="https://images.unsplash.com/photo-1528605240630-36f3c15a1f59?auto=format&fit=crop&w=900&q=80" alt="Latte art lab" /><div class="event-body"><div class="event-meta">Saturday • 10:30 AM</div><h3>Latte Art Lab</h3><p>Learn milk textures, pour patterns, and home espresso basics with our barista team.</p></div></article>
-          <article class="event-card"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80" alt="Maker market" /><div class="event-body"><div class="event-meta">Monthly • 1:00 PM</div><h3>Maker Market</h3><p>Meet local creatives, discover lovely goods, and share an easy afternoon together.</p></div></article>
+        <div class="container">
+          <div class="empty-state">
+            <h3>No verified upcoming events are listed here.</h3>
+            <p>For current event details, contact the café directly. This preview does not accept registrations.</p>
+            <a class="primary-btn" href="mailto:glitterbeancafe@gmail.com">Ask about events</a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li>+1 902-407-5715</li><li>glitterbeancafe@gmail.com</li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Instagram</span><span>Facebook</span></div></div></div>
+        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li><a href="tel:+19024075715">+1 902-407-5715</a></li><li><a href="mailto:glitterbeancafe@gmail.com">glitterbeancafe@gmail.com</a></li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Instagram</span><span>Facebook</span></div></div></div>
         <div class="footer-bottom"><span>© 2026 Glitter Bean Café</span><span>Crafted with sparkle</span></div>
       </div>
     </footer>
+      <script src="catalog.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

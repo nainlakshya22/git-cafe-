@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout | Glitter Bean Café</title>
+    <meta name="description" content="Preview page for Checkout | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <link rel="canonical" href="https://git-cafe-nine.vercel.app/checkout.html" />
+    <meta property="og:title" content="Checkout | Glitter Bean Café" />
+    <meta property="og:description" content="Preview page for Checkout | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <meta property="og:url" content="https://git-cafe-nine.vercel.app/checkout.html" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -19,11 +25,14 @@
           <a href="gift-cards.html">Gift Cards</a>
           <a href="subscriptions.html">Subscriptions</a>
           <a href="story.html">Our Story</a>
-          <a href="events.html">Events</a>\r\n          <a href="catering.html">Catering</a>\r\n          <a href="faq.html">FAQ</a>\r\n          <a href="contact.html">Visit</a>
+          <a href="events.html">Events</a>
+          <a href="catering.html">Catering</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Visit</a>
         </nav>
         <div class="nav-actions">
           <button class="icon-button" aria-label="Search">⌕</button>
-          <a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">2</span></a>
+          <a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a>
         </div>
       </div>
     </header>
@@ -33,8 +42,8 @@
         <div class="container page-hero-inner">
           <div>
             <div class="breadcrumb">Checkout</div>
-            <h1>Secure checkout</h1>
-            <p>Complete your order with shipping, delivery, and secure payment details.</p>
+            <h1>Checkout options</h1>
+            <p>Online payment and order fulfillment are not configured on this preview site.</p>
           </div>
           <a class="ghost-btn" href="cart.html">Back to cart</a>
         </div>
@@ -43,33 +52,20 @@
       <section class="section">
         <div class="container checkout-layout">
           <div class="form-card">
-            <div class="kicker">Customer information</div>
-            <form>
-              <div class="form-grid" style="margin-top: 18px;">
-                <div class="form-field"><label>First name</label><input type="text" value="Amelia" /></div>
-                <div class="form-field"><label>Last name</label><input type="text" value="Ross" /></div>
-                <div class="form-field full"><label>Email</label><input type="email" value="amelia@example.com" /></div>
-                <div class="form-field full"><label>Address</label><input type="text" value="1256 Queen Street" /></div>
-                <div class="form-field"><label>City</label><input type="text" value="Halifax" /></div>
-                <div class="form-field"><label>Province</label><input type="text" value="Nova Scotia" /></div>
-                <div class="form-field"><label>Postal code</label><input type="text" value="B3J 2G3" /></div>
-                <div class="form-field"><label>Country</label><select><option>Canada</option></select></div>
-                <div class="form-field full"><label>Card number</label><input type="text" value="4242 4242 4242 4242" /></div>
-                <div class="form-field"><label>Expiry date</label><input type="text" value="12/29" /></div>
-                <div class="form-field"><label>CVV</label><input type="text" value="483" /></div>
-              </div>
-              <div style="margin-top: 20px;"><button type="submit" class="primary-btn">Place order</button></div>
-              <div class="confirmation" id="order-confirmation">Your order has been placed successfully. A confirmation email is on the way.</div>
-            </form>
+            <div class="kicker">Ordering is not available online</div>
+            <h2 class="section-heading">No payment will be collected.</h2>
+            <p class="lead">This site has no payment processor, order API, verified tax or shipping rules, or café inventory integration. Your preview cart is stored only in this browser and does not create an order.</p>
+            <p>For current products and availability, contact Glitter Bean Café directly. Do not enter payment information on this preview site.</p>
+            <a class="primary-btn" href="mailto:glitterbeancafe@gmail.com">Contact the café</a>
           </div>
 
           <aside class="checkout-summary">
             <h3>Order summary</h3>
-            <div class="summary-line"><span>Sunrise Bloom × 1</span><span>$24.00</span></div>
-            <div class="summary-line"><span>Velvet Mocha × 2</span><span>$14.00</span></div>
-            <div class="summary-line"><span>Shipping</span><span>$6.00</span></div>
-            <div class="summary-line"><span>Taxes</span><span>$4.30</span></div>
-            <div class="summary-line total"><span>Total</span><span>$48.30</span></div>
+            <p>Sample cart values only. Final prices, taxes, and delivery are not calculated.</p>
+            <div class="summary-line"><span>Preview subtotal</span><span data-cart-subtotal>$0.00</span></div>
+            <div class="summary-line"><span>Shipping</span><span data-cart-shipping>Calculated by café</span></div>
+            <div class="summary-line"><span>Taxes</span><span data-cart-tax>Calculated by café</span></div>
+            <div class="summary-line total"><span>Preview total</span><span data-cart-total>$0.00</span></div>
           </aside>
         </div>
       </section>
@@ -80,13 +76,14 @@
         <div class="footer-grid">
           <div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div>
           <div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div>
-          <div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li>+1 902-407-5715</li><li>glitterbeancafe@gmail.com</li></ul></div>
+          <div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS</li><li><a href="tel:+19024075715">+1 902-407-5715</a></li><li><a href="mailto:glitterbeancafe@gmail.com">glitterbeancafe@gmail.com</a></li></ul></div>
           <div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Instagram</span><span>Facebook</span></div></div>
         </div>
         <div class="footer-bottom"><span>© 2026 Glitter Bean Café</span><span>Crafted with sparkle</span></div>
       </div>
     </footer>
 
+    <script src="catalog.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
