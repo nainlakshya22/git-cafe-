@@ -20,9 +20,16 @@
 
   function readCart() {
     try {
-      const saved = JSON.parse(localStorage.getItem(cartKey) || "[]");
-      if (!Array.isArray(saved)) return [];
-      return saved.filter((item) => {
+      const raw = localStorage.getItem(cartKey);
+      const saved = JSON.parse(raw || "[]");
+      if (!Array.isArray(saved)) {
+        if (raw !== null && !storageWarningShown) {
+          showNotice("The preview cart contains invalid saved data and could not be loaded.");
+          storageWarningShown = true;
+        }
+        return [];
+      }
+      const validItems = saved.filter((item) => {
         if (!item || typeof item !== "object" || typeof item.id !== "string") return false;
         const product = catalog.find((entry) => entry.id === item.id);
         const validVariant = item.variant === undefined || item.variant === "" ||
@@ -32,7 +39,15 @@
           Number.isSafeInteger(item.quantity) &&
           item.quantity > 0 &&
           item.quantity <= 99;
+      }).map((item) => {
+        const product = catalog.find((entry) => entry.id === item.id);
+        return { ...item, variant: item.variant || product.variants[0] || "" };
       });
+      if (validItems.length !== saved.length && !storageWarningShown) {
+        showNotice("Invalid saved preview cart items were skipped.");
+        storageWarningShown = true;
+      }
+      return validItems;
     } catch {
       if (!storageWarningShown) {
         showNotice("The preview cart could not be read from this browser. Check browser storage settings and reload.");
@@ -67,11 +82,12 @@
       showNotice("This item is a preview only. Contact the café to confirm availability.");
       return;
     }
+    const selectedVariant = variant || product.variants[0] || "";
     const cart = readCart();
-    const key = `${id}:${variant}`;
+    const key = `${id}:${selectedVariant}`;
     const existing = cart.find((item) => `${item.id}:${item.variant || ""}` === key);
     if (existing) existing.quantity = Math.min(99, existing.quantity + quantity);
-    else cart.push({ id, quantity: Math.min(99, quantity), variant });
+    else cart.push({ id, quantity: Math.min(99, quantity), variant: selectedVariant });
     if (!saveCart(cart)) return;
     showNotice(`${product.name} added to your preview cart. Online ordering is not enabled.`);
   }
@@ -130,6 +146,7 @@
       });
 
       const sort = grid.dataset.sort || "featured";
+      if (sort === "alphabetical") products.sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base" }));
       if (sort === "price-asc") products.sort((a, b) => a.price - b.price);
       if (sort === "price-desc") products.sort((a, b) => b.price - a.price);
       grid.replaceChildren(...products.map(renderCard));
@@ -179,12 +196,14 @@
     const description = detail.querySelector("[data-detail-description]");
     const price = detail.querySelector("[data-detail-price]");
     const variants = detail.querySelector("[data-detail-variants]");
+    const selectedVariantLabel = detail.querySelector("[data-detail-selected-variant]");
     const add = detail.querySelector("[data-detail-add]");
     if (image) { image.src = product.image; image.alt = `${product.name} concept image (stock photo)`; }
     if (name) name.textContent = product.name;
     if (category) category.textContent = product.category;
     if (description) description.textContent = `Concept only: ${product.description}`;
     if (price) price.textContent = `Preview ${money(product.price)}`;
+    if (selectedVariantLabel) selectedVariantLabel.textContent = product.variants[0] || "Standard";
     if (variants) variants.replaceChildren(...product.variants.map((variant, index) => {
       const button = document.createElement("button");
       button.className = `option-pill${index === 0 ? " selected" : ""}`;
@@ -198,6 +217,7 @@
         });
         button.classList.add("selected");
         button.setAttribute("aria-pressed", "true");
+        if (selectedVariantLabel) selectedVariantLabel.textContent = variant;
       });
       return button;
     }));
