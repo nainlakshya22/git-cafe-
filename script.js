@@ -2,6 +2,7 @@
   const catalog = window.GBCatalog || [];
   const cartKey = "glitterBeanCart.v1";
   const money = (value) => new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(value);
+  let storageWarningShown = false;
 
   function showNotice(message) {
     let status = document.querySelector("#preview-status");
@@ -33,13 +34,23 @@
           item.quantity <= 99;
       });
     } catch {
+      if (!storageWarningShown) {
+        showNotice("The preview cart could not be read from this browser. Check browser storage settings and reload.");
+        storageWarningShown = true;
+      }
       return [];
     }
   }
 
   function saveCart(cart) {
-    localStorage.setItem(cartKey, JSON.stringify(cart));
+    try {
+      localStorage.setItem(cartKey, JSON.stringify(cart));
+    } catch {
+      showNotice("The preview cart could not be saved in this browser. Check browser storage settings and try again.");
+      return false;
+    }
     updateCartCount();
+    return true;
   }
 
   function updateCartCount() {
@@ -61,7 +72,7 @@
     const existing = cart.find((item) => `${item.id}:${item.variant || ""}` === key);
     if (existing) existing.quantity = Math.min(99, existing.quantity + quantity);
     else cart.push({ id, quantity: Math.min(99, quantity), variant });
-    saveCart(cart);
+    if (!saveCart(cart)) return;
     showNotice(`${product.name} added to your preview cart. Online ordering is not enabled.`);
   }
 
@@ -77,8 +88,8 @@
       <div class="product-info">
         <div class="product-category">${product.category}</div>
         <h3><a href="product.html?id=${encodeURIComponent(product.id)}">${product.name}</a></h3>
-        <p>${product.description}</p>
-        <div class="product-meta"><span class="price">${money(product.price)}</span><span class="availability">${product.availability}</span></div>
+        <p>Concept only: ${product.description}</p>
+        <div class="product-meta"><span class="price">Preview ${money(product.price)}</span><span class="availability">${product.availability}</span></div>
         <div class="product-actions">
           <button class="small-btn primary-btn" type="button" data-add-to-cart="${product.id}">Add to preview cart</button>
           <a class="small-btn ghost-btn" href="product.html?id=${encodeURIComponent(product.id)}">Details</a>
@@ -172,8 +183,8 @@
     if (image) { image.src = product.image; image.alt = `${product.name} concept image (stock photo)`; }
     if (name) name.textContent = product.name;
     if (category) category.textContent = product.category;
-    if (description) description.textContent = product.description;
-    if (price) price.textContent = money(product.price);
+    if (description) description.textContent = `Concept only: ${product.description}`;
+    if (price) price.textContent = `Preview ${money(product.price)}`;
     if (variants) variants.replaceChildren(...product.variants.map((variant, index) => {
       const button = document.createElement("button");
       button.className = `option-pill${index === 0 ? " selected" : ""}`;
@@ -192,6 +203,13 @@
     }));
     if (add) add.dataset.addToCart = product.id;
     document.title = `${product.name} | Glitter Bean Café`;
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    const socialTitle = document.querySelector('meta[property="og:title"]');
+    const socialDescription = document.querySelector('meta[property="og:description"]');
+    const pageDescription = `Preview concept for ${product.name}. Product details, availability, and pricing require café confirmation.`;
+    if (descriptionMeta) descriptionMeta.content = pageDescription;
+    if (socialTitle) socialTitle.content = document.title;
+    if (socialDescription) socialDescription.content = pageDescription;
   }
 
   function initializeCart() {
@@ -211,11 +229,11 @@
         <div><h4>${product.name}</h4><p>${item.variant || product.category} · Preview only</p>
           <div class="cart-item-controls">
             <div class="qty-picker" aria-label="Quantity for ${product.name}">
-              <button type="button" data-quantity="-1" data-id="${product.id}" aria-label="Decrease quantity">−</button>
+              <button type="button" data-quantity="-1" data-id="${product.id}" data-variant="${item.variant || ""}" aria-label="Decrease quantity for ${product.name} ${item.variant || ""}">−</button>
               <span>${item.quantity}</span>
-              <button type="button" data-quantity="1" data-id="${product.id}" aria-label="Increase quantity">+</button>
+              <button type="button" data-quantity="1" data-id="${product.id}" data-variant="${item.variant || ""}" aria-label="Increase quantity for ${product.name} ${item.variant || ""}">+</button>
             </div>
-            <button type="button" class="small-btn ghost-btn" data-remove-item="${product.id}">Remove</button>
+            <button type="button" class="small-btn ghost-btn" data-remove-item="${product.id}" data-variant="${item.variant || ""}">Remove</button>
           </div>
         </div><div class="price">${money(product.price * item.quantity)}</div>`;
       root.append(row);
@@ -224,8 +242,8 @@
       root.innerHTML = '<div class="empty-state"><h3>Your preview cart is empty</h3><p>Explore the catalog and add an item to see how the cart works.</p><a class="primary-btn" href="shop.html">Continue shopping</a></div>';
     }
     document.querySelectorAll("[data-cart-subtotal]").forEach((el) => { el.textContent = money(subtotal); });
-    document.querySelectorAll("[data-cart-shipping]").forEach((el) => { el.textContent = "Calculated by café"; });
-    document.querySelectorAll("[data-cart-tax]").forEach((el) => { el.textContent = "Calculated by café"; });
+    document.querySelectorAll("[data-cart-shipping]").forEach((el) => { el.textContent = "Not calculated"; });
+    document.querySelectorAll("[data-cart-tax]").forEach((el) => { el.textContent = "Not calculated"; });
     document.querySelectorAll("[data-cart-total]").forEach((el) => { el.textContent = money(subtotal); });
   }
 
@@ -282,7 +300,7 @@
           status.setAttribute("aria-live", "polite");
           form.append(status);
         }
-        status.textContent = "This form is not connected yet. Please contact the café by email or phone.";
+        status.textContent = "This preview form is not connected. Nothing was sent; café contact details need owner confirmation.";
       });
     });
   }
@@ -298,7 +316,8 @@
     const remove = event.target.closest("[data-remove-item]");
     if (remove) {
       const removedId = remove.dataset.removeItem;
-      saveCart(readCart().filter((item) => item.id !== removedId));
+      const removedVariant = remove.dataset.variant || "";
+      saveCart(readCart().filter((item) => item.id !== removedId || (item.variant || "") !== removedVariant));
       initializeCart();
       return;
     }
@@ -306,7 +325,8 @@
     if (change) {
       const delta = Number(change.dataset.quantity);
       const cart = readCart();
-      const item = cart.find((entry) => entry.id === change.dataset.id);
+      const variant = change.dataset.variant || "";
+      const item = cart.find((entry) => entry.id === change.dataset.id && (entry.variant || "") === variant);
       if (item) item.quantity = Math.max(1, Math.min(99, item.quantity + delta));
       saveCart(cart);
       initializeCart();
@@ -357,19 +377,6 @@
       }
     });
 
-    document.querySelectorAll(".footer-link-row span").forEach((item) => {
-      if (item.textContent.trim() !== "Instagram") {
-        item.remove();
-        return;
-      }
-      const link = document.createElement("a");
-      link.href = "https://www.instagram.com/glitterbeancafe/";
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = item.textContent;
-      item.replaceWith(link);
-    });
-
     const footerDestinations = {
       Shop: "shop.html",
       "Coffee Collection": "coffee.html",
@@ -400,8 +407,12 @@
         if (mainImage && thumbImage) {
           mainImage.src = thumbImage.src;
           mainImage.alt = thumbImage.alt;
-          document.querySelectorAll(".gallery-thumb").forEach((item) => item.classList.remove("active"));
+          document.querySelectorAll(".gallery-thumb").forEach((item) => {
+            item.classList.remove("active");
+            item.setAttribute("aria-pressed", "false");
+          });
           thumb.classList.add("active");
+          thumb.setAttribute("aria-pressed", "true");
         }
       });
     });
