@@ -10,7 +10,7 @@
     <meta property="og:description" content="Preview page for Gift Cards | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
     <meta property="og:url" content="https://git-cafe-nine.vercel.app/gift-cards.html" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <header class="site-header">
@@ -30,7 +30,21 @@
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Visit</a>
         </nav>
-        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a></div>
+        <div class="nav-actions">
+          <button class="icon-button" aria-label="Search" title="Search" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <circle cx="10.5" cy="10.5" r="7"></circle>
+              <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+            </svg>
+          </button>
+          <a class="icon-button" href="cart.html" aria-label="Cart" title="Shopping Cart" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <rect x="5" y="8" width="14" height="13" rx="2"></rect>
+              <path d="M9 8V5a3 3 0 0 1 6 0v3"></path>
+            </svg>
+            <span class="bag-count">0</span>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -48,6 +62,7 @@
 
       <section class="section">
         <div class="container products-grid" data-catalog="gifts">
+          <p class="catalog-preview-note">Sample catalog concepts require JavaScript. No inventory or availability is confirmed, and nothing is for sale through this preview.</p>
           <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Little Spark Gift Card" /></div><div class="product-info"><div class="product-category">Gift</div><h3>Little Spark</h3><p>Perfect for daily rituals and surprise pickup moments.</p><div class="product-meta"><span class="price">$25</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
           <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80" alt="Bloom Gift Card" /></div><div class="product-info"><div class="product-category">Gift</div><h3>Bloom</h3><p>A beautiful welcome for birthdays, coffee dates, and celebrations.</p><div class="product-meta"><span class="price">$50</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
           <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Golden Hour gift card" /></div><div class="product-info"><div class="product-category">Gift</div><h3>Golden Hour</h3><p>For the friend who deserves a little luxury in every cup.</p><div class="product-meta"><span class="price">$100</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>

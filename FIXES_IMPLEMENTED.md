@@ -1,5 +1,15 @@
 # Fixes Implemented
 
+## Mobile and client-demo QA refresh — 2026-11-15
+
+- Shortened the preview banner so it is less intrusive on mobile.
+- Increased interactive control minimum dimensions to 44px, including small-phone header controls and product/filter actions.
+- Made the mobile hero image scale with the viewport and tightened mobile headline/spacing.
+- Updated the homepage SEO title and description to identify this as a preview and avoid unconfirmed business claims.
+- Verified the local site across all 17 pages at the eight requested CSS viewport sizes (136 combinations) and reran the interaction checks.
+- Captured before/after mobile and after desktop screenshots in the browser session; screenshots were not added to the repository.
+- These updates remain local and have not been deployed.
+
 **Status:** Implemented locally and browser-verified. Changes remain uncommitted and undeployed pending approval.
 
 ## Repairs

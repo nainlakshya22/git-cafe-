@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glitter Bean Café | Specialty Coffee & Community</title>
+    <title>Glitter Bean Café | Halifax Website Preview</title>
     <link rel="canonical" href="https://git-cafe-nine.vercel.app/" />
-    <meta property="og:title" content="Glitter Bean Café | Specialty Coffee &amp; Community" />
+    <meta property="og:title" content="Glitter Bean Café | Halifax Website Preview" />
     <meta property="og:description" content="Preview the Glitter Bean Café website. Confirm current products, pricing, hours, and availability with the café." />
     <meta property="og:url" content="https://git-cafe-nine.vercel.app/" />
     <meta property="og:type" content="website" />
-    <meta name="description" content="Glitter Bean Café brings specialty coffee, community events and everyday magic to Halifax." />
+    <meta name="description" content="Preview the proposed Glitter Bean Café website for Halifax. Café details, products, hours, and availability await owner confirmation." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <header class="site-header">
@@ -36,8 +36,19 @@
           <a href="contact.html">Visit</a>
         </nav>
         <div class="nav-actions">
-          <button class="icon-button" aria-label="Search">⌕</button>
-          <a class="icon-button" href="cart.html" aria-label="Shopping cart"><span>🛍️</span><span class="bag-count">0</span></a>
+          <button class="icon-button" aria-label="Search" title="Search" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <circle cx="10.5" cy="10.5" r="7"></circle>
+              <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+            </svg>
+          </button>
+          <a class="icon-button" href="cart.html" aria-label="Cart" title="Shopping Cart" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <rect x="5" y="8" width="14" height="13" rx="2"></rect>
+              <path d="M9 8V5a3 3 0 0 1 6 0v3"></path>
+            </svg>
+            <span class="bag-count">0</span>
+          </a>
         </div>
       </div>
     </header>
@@ -50,13 +61,8 @@
             <h1>A Little More Glitter in Every Cup.</h1>
             <p>Coffee, community and a little everyday magic.</p>
             <div class="hero-actions">
-              <a class="primary-btn" href="shop.html">Explore Our Collection</a>
+              <a class="primary-btn" href="menu.html">Explore Our Menu</a>
               <a class="secondary-btn" href="contact.html">Visit Our Café</a>
-            </div>
-            <div class="hero-notes">
-              <div class="hero-note"><strong>Good coffee</strong> thoughtfully served</div>
-              <div class="hero-note"><strong>Warm welcome</strong> every visit</div>
-              <div class="hero-note"><strong>Halifax</strong> Nova Scotia</div>
             </div>
           </div>
           <div class="hero-visual">
@@ -77,27 +83,27 @@
           <div class="kicker">Curated collections</div>
           <h2 class="section-heading">Explore the café preview.</h2>
           <div class="grid-3" style="margin-top: 36px;">
-            <article class="feature-card">
+            <a class="feature-card" href="coffee.html">
               <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=80" alt="Stock photograph of coffee beans and brewing equipment" />
               <div class="feature-content">
                 <h3>Coffee collection</h3>
                 <p>Browse sample product concepts. Roast, sourcing, and availability details need café confirmation.</p>
               </div>
-            </article>
-            <article class="feature-card">
+            </a>
+            <a class="feature-card" href="menu.html">
               <img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80" alt="Stock photograph of a café drink" />
               <div class="feature-content">
                 <h3>Café menu</h3>
                 <p>Menu concepts are for preview only; ingredients, customization, and current offerings need confirmation.</p>
               </div>
-            </article>
-            <article class="feature-card">
+            </a>
+            <a class="feature-card" href="contact.html">
               <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Stock photograph of a café interior" />
               <div class="feature-content">
                 <h3>Visit information</h3>
                 <p>Contact the café to confirm current location, opening hours, and community programming.</p>
               </div>
-            </article>
+            </a>
           </div>
         </div>
       </section>
@@ -107,78 +113,7 @@
           <div class="kicker">Catalog preview</div>
           <h2 class="section-heading">Featured product concepts.</h2>
           <div class="products-grid" data-catalog="featured" style="margin-top: 36px;">
-            <article class="product-card">
-              <div class="product-media">
-                <div class="product-badges"><span class="product-badge">Best seller</span></div>
-                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80" alt="Sunrise Bloom coffee bag" />
-              </div>
-              <div class="product-info">
-                <div class="product-category">Coffee Beans</div>
-                <h3>Sunrise Bloom</h3>
-                <p>Honeyed citrus, florals, and a velvet finish.</p>
-                <div class="product-meta">
-                  <span class="price">$24</span>
-                  <span class="availability in-stock">In stock</span>
-                </div>
-                <div class="product-actions">
-                  <button class="small-btn primary-btn">Quick Add</button>
-                </div>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-media">
-                <div class="product-badges"><span class="product-badge">New</span></div>
-                <img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=900&q=80" alt="Velvet Mocha drink" />
-              </div>
-              <div class="product-info">
-                <div class="product-category">Signature Drinks</div>
-                <h3>Velvet Mocha</h3>
-                <p>Dark chocolate, espresso, and house-made espresso cream.</p>
-                <div class="product-meta">
-                  <span class="price">$7</span>
-                  <span class="availability in-stock">Ready</span>
-                </div>
-                <div class="product-actions">
-                  <button class="small-btn primary-btn">Quick Add</button>
-                </div>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-media">
-                <div class="product-badges"><span class="product-badge">Limited</span></div>
-                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80" alt="Pearl Stone Blend" />
-              </div>
-              <div class="product-info">
-                <div class="product-category">Specialty Blends</div>
-                <h3>Pearl Stone</h3>
-                <p>Stone fruit, cacao nib, and a caramel finish.</p>
-                <div class="product-meta">
-                  <span class="price">$26</span>
-                  <span class="availability low-stock">Low stock</span>
-                </div>
-                <div class="product-actions">
-                  <button class="small-btn primary-btn">Quick Add</button>
-                </div>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-media">
-                <div class="product-badges"><span class="product-badge">Gift</span></div>
-                <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Gift card box" />
-              </div>
-              <div class="product-info">
-                <div class="product-category">Gift Cards</div>
-                <h3>Little Spark</h3>
-                <p>Perfect for coffee dates, birthdays, and treat-yourself moments.</p>
-                <div class="product-meta">
-                  <span class="price">$25</span>
-                  <span class="availability in-stock">Available</span>
-                </div>
-                <div class="product-actions">
-                  <button class="small-btn primary-btn">Quick Add</button>
-                </div>
-              </div>
-            </article>
+            <p class="catalog-preview-note">Sample catalog concepts load when JavaScript is available. Nothing is in stock or for sale through this preview.</p>
           </div>
         </div>
       </section>
@@ -190,33 +125,10 @@
           </div>
           <div class="story-copy">
             <div class="kicker">Our story</div>
-            <h2 class="section-heading">Built for bright mornings and slow afternoons.</h2>
-            <p class="lead">Coffee, community, and a little everyday magic. Owner-approved details about the café and its story are needed before launch.</p>
-            <div class="story-list">
-              <div class="story-item">
-                <div class="story-number">1</div>
-                <div>
-                  <strong>Coffee sourcing.</strong><br />
-                  Add owner-confirmed sourcing and roast details.
-                </div>
-              </div>
-              <div class="story-item">
-                <div class="story-number">2</div>
-                <div>
-                  <strong>Community.</strong><br />
-                  Add owner-confirmed details about community programming.
-                </div>
-              </div>
-              <div class="story-item">
-                <div class="story-number">3</div>
-                <div>
-                  <strong>The café experience.</strong><br />
-                  Add owner-confirmed details about the café and its team.
-                </div>
-              </div>
-            </div>
+            <h2 class="section-heading">A little everyday magic.</h2>
+            <p class="lead">The people, place, and story behind Glitter Bean Café belong here. We’ll shape this space with the café team, using their own words and owner-approved details.</p>
             <div style="margin-top: 28px;">
-              <a class="primary-btn" href="story.html">Discover More</a>
+              <a class="primary-btn" href="story.html">Explore Our Story</a>
             </div>
           </div>
         </div>
@@ -246,27 +158,6 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="quote-box">A pause for coffee and connection.</div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="newsletter">
-            <div>
-              <div class="kicker" style="color: rgba(255,255,255,0.8);">Stay in the loop</div>
-              <h3>Join our coffee club.</h3>
-              <p>Newsletter signup is not connected on this website preview.</p>
-            </div>
-            <form class="newsletter-form">
-              <input type="email" name="email" autocomplete="email" placeholder="Email address" aria-label="Email address" required />
-              <button type="submit" class="secondary-btn">Sign Up</button>
-            </form>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">

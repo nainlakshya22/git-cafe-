@@ -1,5 +1,28 @@
 # Responsive Test Report
 
+## Current QA refresh — 2026-11-15
+
+### Requested viewport matrix
+
+All viewport dimensions below are CSS pixels. The browser device-pixel ratio was 1.25, so Playwright viewport dimensions were adjusted and the resulting `innerWidth` was checked before each page assertion.
+
+| CSS viewport | Target device |
+|---:|---|
+| 375 × 667 | iPhone SE |
+| 390 × 844 | iPhone 13 |
+| 430 × 932 | iPhone Pro Max |
+| 360 × 800 | Android Small |
+| 393 × 873 | Android Standard |
+| 412 × 915 | Android Large |
+| 768 × 1024 | iPad Portrait |
+| 1024 × 768 | Tablet Landscape |
+
+**Result:** 136/136 local page/viewport checks passed and 136/136 public page/viewport checks passed for horizontal overflow and required page-heading presence. No failed *completed* images or missing image alt attributes were detected in the local run. These are browser viewport simulations, not physical-device tests. See [WEBSITE_AUDIT_REPORT.md](./WEBSITE_AUDIT_REPORT.md) for functionality, live-route, screenshot, and Lighthouse limitations.
+
+The small-phone touch-target issue found during this pass was fixed: visible header controls, primary actions, catalog actions, filter pills, and product options now meet a 44px minimum dimension. The mobile preview notice and hero image were also made more compact. These updates are local and are not present on the live deployment.
+
+---
+
 **Test date:** 2026-11-14  
 **Method:** Playwright-controlled browser viewport matrix. The browser device-pixel ratio was 1.25; test dimensions were adjusted to achieve the exact CSS viewport widths below.
 

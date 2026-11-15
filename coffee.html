@@ -10,7 +10,7 @@
     <meta property="og:description" content="Preview page for Coffee Collection | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
     <meta property="og:url" content="https://git-cafe-nine.vercel.app/coffee.html" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <header class="site-header">
@@ -30,7 +30,21 @@
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Visit</a>
         </nav>
-        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a></div>
+        <div class="nav-actions">
+          <button class="icon-button" aria-label="Search" title="Search" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <circle cx="10.5" cy="10.5" r="7"></circle>
+              <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+            </svg>
+          </button>
+          <a class="icon-button" href="cart.html" aria-label="Cart" title="Shopping Cart" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <rect x="5" y="8" width="14" height="13" rx="2"></rect>
+              <path d="M9 8V5a3 3 0 0 1 6 0v3"></path>
+            </svg>
+            <span class="bag-count">0</span>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -58,6 +72,7 @@
             <div class="sort-wrap"><label for="sort">Sort by</label><select id="sort"><option value="featured">Featured</option><option value="alphabetical">Alphabetical: A to Z</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option></select></div>
           </div>
           <div class="products-grid" data-catalog="coffee">
+            <p class="catalog-preview-note">Sample catalog concepts require JavaScript. No inventory or availability is confirmed, and nothing is for sale through this preview.</p>
             <article class="product-card"><div class="product-media"><div class="product-badges"><span class="product-badge">Best seller</span></div><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80" alt="Sunrise Bloom" /></div><div class="product-info"><div class="product-category">Single Origin</div><h3>Sunrise Bloom</h3><p>Honeyed citrus, florals, and a velvet finish.</p><div class="product-meta"><span class="price">$24</span><span class="availability in-stock">In stock</span></div><div class="product-actions"><button class="small-btn primary-btn">Quick Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
             <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80" alt="Pearl Stone" /></div><div class="product-info"><div class="product-category">Seasonal</div><h3>Pearl Stone</h3><p>Stone fruit, cacao nib, and a caramel finish.</p><div class="product-meta"><span class="price">$26</span><span class="availability low-stock">Low stock</span></div><div class="product-actions"><button class="small-btn primary-btn">Quick Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
             <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" alt="Glow Roast" /></div><div class="product-info"><div class="product-category">Espresso</div><h3>Glow Roast</h3><p>Deep cocoa, toasted almond and a silky body.</p><div class="product-meta"><span class="price">$23</span><span class="availability in-stock">Ready</span></div><div class="product-actions"><button class="small-btn primary-btn">Quick Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
