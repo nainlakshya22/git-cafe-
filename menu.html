@@ -10,7 +10,7 @@
     <meta property="og:description" content="Preview page for Café Menu | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
     <meta property="og:url" content="https://git-cafe-nine.vercel.app/menu.html" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <header class="site-header">
@@ -30,7 +30,21 @@
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Visit</a>
         </nav>
-        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a></div>
+        <div class="nav-actions">
+          <button class="icon-button" aria-label="Search" title="Search" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <circle cx="10.5" cy="10.5" r="7"></circle>
+              <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+            </svg>
+          </button>
+          <a class="icon-button" href="cart.html" aria-label="Cart" title="Shopping Cart" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <rect x="5" y="8" width="14" height="13" rx="2"></rect>
+              <path d="M9 8V5a3 3 0 0 1 6 0v3"></path>
+            </svg>
+            <span class="bag-count">0</span>
+          </a>
+        </div>
       </div>
     </header>
 

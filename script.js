@@ -150,6 +150,7 @@
       if (sort === "price-asc") products.sort((a, b) => a.price - b.price);
       if (sort === "price-desc") products.sort((a, b) => b.price - a.price);
       grid.replaceChildren(...products.map(renderCard));
+      grid.classList.add("catalog-ready");
 
       const empty = grid.parentElement.querySelector("[data-empty-search]");
       if (empty) empty.hidden = products.length > 0;
@@ -308,8 +309,8 @@
     });
   }
 
-  function initializeContactAndNewsletterForms() {
-    document.querySelectorAll(".newsletter-form, .contact-card form").forEach((form) => {
+  function initializeContactForms() {
+    document.querySelectorAll(".contact-card form").forEach((form) => {
       form.addEventListener("submit", (event) => {
         event.preventDefault();
         let status = form.querySelector("[data-form-status]");
@@ -357,6 +358,7 @@
     const header = document.querySelector(".site-header");
     const nav = document.querySelector(".top-nav");
     if (header && nav) {
+      header.classList.add("has-mobile-nav");
       const toggle = document.createElement("button");
       toggle.className = "mobile-menu-toggle";
       toggle.type = "button";
@@ -376,7 +378,7 @@
       const notice = document.createElement("div");
       notice.className = "preview-notice";
       notice.setAttribute("role", "note");
-      notice.textContent = "Website preview · Business details, products, prices, and availability need café confirmation · Online orders and payments are not enabled";
+      notice.textContent = "Website preview · Café details to confirm · Online ordering disabled";
       header.before(notice);
     }
 
@@ -397,19 +399,26 @@
       }
     });
 
-    const footerDestinations = {
-      Shop: "shop.html",
-      "Coffee Collection": "coffee.html",
-      Subscriptions: "subscriptions.html",
-      "Gift Cards": "gift-cards.html",
-    };
-    document.querySelectorAll(".footer-links li").forEach((item) => {
-      const destination = footerDestinations[item.textContent.trim()];
-      if (!destination) return;
-      const link = document.createElement("a");
-      link.href = destination;
-      link.textContent = item.textContent;
-      item.replaceChildren(link);
+    const footerNavigation = [
+      ["Shop All", "shop.html"],
+      ["Coffee Collection", "coffee.html"],
+      ["Café Menu", "menu.html"],
+      ["Our Story", "story.html"],
+      ["Events", "events.html"],
+      ["Visit", "contact.html"],
+    ];
+    document.querySelectorAll(".footer-title").forEach((title) => {
+      if (title.textContent.trim() !== "Explore") return;
+      const list = title.parentElement?.querySelector(".footer-links");
+      if (!list) return;
+      list.replaceChildren(...footerNavigation.map(([label, destination]) => {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = destination;
+        link.textContent = label;
+        item.append(link);
+        return item;
+      }));
     });
 
     document.querySelectorAll("[data-quantity-step]").forEach((button) => {
@@ -437,6 +446,6 @@
       });
     });
 
-    initializeContactAndNewsletterForms();
+    initializeContactForms();
   });
 })();

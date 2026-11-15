@@ -10,7 +10,7 @@
     <meta property="og:description" content="Preview page for Our Story | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
     <meta property="og:url" content="https://git-cafe-nine.vercel.app/story.html" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <header class="site-header">
@@ -30,7 +30,21 @@
           <a href="faq.html">FAQ</a>
           <a href="contact.html">Visit</a>
         </nav>
-        <div class="nav-actions"><button class="icon-button" aria-label="Search">⌕</button><a class="icon-button" href="cart.html" aria-label="Cart"><span>🛍️</span><span class="bag-count">0</span></a></div>
+        <div class="nav-actions">
+          <button class="icon-button" aria-label="Search" title="Search" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <circle cx="10.5" cy="10.5" r="7"></circle>
+              <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+            </svg>
+          </button>
+          <a class="icon-button" href="cart.html" aria-label="Cart" title="Shopping Cart" style="display:inline-flex;align-items:center;justify-content:center;">
+            <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:auto;">
+              <rect x="5" y="8" width="14" height="13" rx="2"></rect>
+              <path d="M9 8V5a3 3 0 0 1 6 0v3"></path>
+            </svg>
+            <span class="bag-count">0</span>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -40,9 +54,9 @@
           <div>
             <div class="breadcrumb">About / Story</div>
             <h1>Our Story</h1>
-            <p>Learn more about Glitter Bean Café in Halifax. This preview needs the café’s owner-approved story before publication.</p>
+            <p>A first look at how Glitter Bean Café’s story could be shared. The café team’s own history and perspective will lead the final version.</p>
           </div>
-          <a class="primary-btn" href="events.html">See the community</a>
+          <a class="primary-btn" href="events.html">Explore Events Preview</a>
         </div>
       </section>
 
@@ -51,20 +65,9 @@
           <div class="story-image"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Representative stock photo of a café; not Glitter Bean Café" /></div>
           <div class="story-copy">
             <div class="kicker">Who we are</div>
-            <h2 class="section-heading">A neighbourhood café with a sparkling point of view.</h2>
-            <p class="lead">Glitter Bean Café is a Halifax café. Add verified details about its coffee, team, sourcing, and community involvement here before publishing.</p>
-            <div class="story-list">
-              <div class="story-item"><div class="story-number">1</div><div><strong>Coffee and sourcing.</strong><br /> Owner-approved details needed.</div></div>
-              <div class="story-item"><div class="story-number">2</div><div><strong>Hospitality and team.</strong><br /> Owner-approved details needed.</div></div>
-              <div class="story-item"><div class="story-number">3</div><div><strong>Community involvement.</strong><br /> Owner-approved details needed.</div></div>
-            </div>
+            <h2 class="section-heading">A little everyday magic.</h2>
+            <p class="lead">This space is reserved for Glitter Bean Café’s own story—its beginnings, the people behind it, and the details that make it its own. Copy and photography will be finalized with the café team.</p>
           </div>
-        </div>
-      </section>
-
-      <section class="section section-shell">
-        <div class="container">
-          <div class="quote-box">Owner-approved story or quote needed before publication.</div>
         </div>
       </section>
     </main>
