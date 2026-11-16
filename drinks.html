@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signature Drinks | Glitter Bean Café</title>
-    <meta name="description" content="Preview page for Signature Drinks | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <title>Signature Drinks | Glitter Bean Café Co-op — Halifax, NS</title>
+    <meta name="description" content="Discover Glitter Bean's signature drinks — The Fairy Latte, Rainbow Glitter Latte, London Fog, and more. Halifax's most magical café drinks." />
     <link rel="canonical" href="https://git-cafe-nine.vercel.app/drinks.html" />
-    <meta property="og:title" content="Signature Drinks | Glitter Bean Café" />
-    <meta property="og:description" content="Preview page for Signature Drinks | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <meta property="og:title" content="Signature Drinks | Glitter Bean Café Co-op — Halifax, NS" />
+    <meta property="og:description" content="Discover Glitter Bean's signature drinks — The Fairy Latte, Rainbow Glitter Latte, London Fog, and more. Halifax's most magical café drinks." />
     <meta property="og:url" content="https://git-cafe-nine.vercel.app/drinks.html" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
   <body>
     <header class="site-header">
@@ -53,32 +53,40 @@
         <div class="container page-hero-inner">
           <div>
             <div class="breadcrumb">Menu / Signature Drinks</div>
-            <h1>Signature Drinks</h1>
-            <p>Dreamy café favorites built with creamy textures, bright fruit notes, and just enough sparkle.</p>
+            <h1>Our Signature Drinks</h1>
+            <p>From our famous Fairy Latte to the rainbow-layered Glitter Latte — Halifax's most beloved specialty drinks, made with house syrups and Just Us! espresso.</p>
+            <p style="margin-top: 12px; font-size: 0.95em; opacity: 0.85;">All drinks crafted with house-made syrups: lavender, rose, elderflower, vanilla, and caramel.</p>
           </div>
           <a class="primary-btn" href="menu.html">View café menu</a>
         </div>
       </section>
 
       <section class="section">
-        <div class="container products-grid" data-catalog="drinks">
-          <p class="catalog-preview-note">Sample catalog concepts require JavaScript. No inventory or availability is confirmed, and nothing is for sale through this preview.</p>
-          <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=900&q=80" alt="Velvet Mocha" /></div><div class="product-info"><div class="product-category">Espresso</div><h3>Velvet Mocha</h3><p>Dark chocolate, espresso, and a cloud of whipped cream.</p><div class="product-meta"><span class="price">$7</span><span class="availability in-stock">Ready</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
-          <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80" alt="Moonlight Matcha" /></div><div class="product-info"><div class="product-category">Matcha</div><h3>Moonlight Matcha</h3><p>Soft matcha, citrus sparkle, and creamy oat milk.</p><div class="product-meta"><span class="price">$8</span><span class="availability in-stock">Ready</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
-          <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Bloom Latte" /></div><div class="product-info"><div class="product-category">House Special</div><h3>Bloom Latte</h3><p>Vanilla bean sweetness with a hint of rose and caramel.</p><div class="product-meta"><span class="price">$7</span><span class="availability in-stock">Classic</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
-          <article class="product-card"><div class="product-media"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Pink Cloud" /></div><div class="product-info"><div class="product-category">Cold Brew</div><h3>Pink Cloud</h3><p>Cold brew with berry syrup and citrus cream.</p><div class="product-meta"><span class="price">$8</span><span class="availability in-stock">Chilled</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
+        <div class="container">
+          <div class="filter-bar" style="margin-bottom: 2rem;">
+            <button class="filter-pill active" type="button" data-filter="all">All</button>
+            <button class="filter-pill" type="button" data-filter="signature">Signature Drinks</button>
+            <button class="filter-pill" type="button" data-filter="teas">Teas &amp; Warmers</button>
+          </div>
+          <div class="products-grid" data-catalog="drinks">
+            <article class="product-card" data-category="signature"><div class="product-media"><div class="product-badges"><span class="product-badge">Fan favourite</span></div><img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=900&q=80" alt="The Fairy Latte" /></div><div class="product-info"><div class="product-category">Signature Drinks</div><h3>The Fairy Latte</h3><p>Our most iconic drink — lavender and rose syrups with Just Us! espresso and silky steamed milk.</p><div class="product-meta"><span class="price">$7</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
+            <article class="product-card" data-category="signature"><div class="product-media"><div class="product-badges"><span class="product-badge">Popular</span></div><img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80" alt="Rainbow Glitter Latte" /></div><div class="product-info"><div class="product-category">Signature Drinks</div><h3>Rainbow Glitter Latte</h3><p>A layered, rainbow-coloured latte with elderflower and house syrups — a Halifax classic.</p><div class="product-meta"><span class="price">$8</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
+            <article class="product-card" data-category="teas"><div class="product-media"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="London Fog" /></div><div class="product-info"><div class="product-category">Teas &amp; Warmers</div><h3>London Fog</h3><p>Earl Grey tea with steamed oat milk and a touch of vanilla syrup — warm and comforting.</p><div class="product-meta"><span class="price">$6</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
+            <article class="product-card" data-category="teas"><div class="product-media"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Golden Turmeric Latte" /></div><div class="product-info"><div class="product-category">Teas &amp; Warmers</div><h3>Golden Turmeric Latte</h3><p>Turmeric, ginger, and warming spices with steamed milk — bright, golden, and soothing.</p><div class="product-meta"><span class="price">$7</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
+            <article class="product-card" data-category="signature"><div class="product-media"><img src="https://images.unsplash.com/photo-1497636577773-f1231844b336?auto=format&fit=crop&w=900&q=80" alt="Matcha Latte" /></div><div class="product-info"><div class="product-category">Signature Drinks</div><h3>Matcha Latte</h3><p>Ceremonial-grade matcha with creamy oat milk and a hint of vanilla syrup.</p><div class="product-meta"><span class="price">$7</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
+            <article class="product-card" data-category="signature"><div class="product-media"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Italian Soda" /></div><div class="product-info"><div class="product-category">Signature Drinks</div><h3>Italian Soda</h3><p>Sparkling water with your choice of house-made syrup — lavender, rose, elderflower, caramel, or vanilla.</p><div class="product-meta"><span class="price">$5</span><span class="availability in-stock">Available</span></div><div class="product-actions"><button class="small-btn primary-btn">Add</button><a class="small-btn ghost-btn" href="product.html">View</a></div></div></article>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>Location and contact details are awaiting café confirmation.</li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Social profiles pending owner confirmation</span></div></div></div>
-        <div class="footer-bottom"><span>© 2026 Glitter Bean Café</span><span>Crafted with sparkle</span></div>
+        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café Co-op</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li><a href="shop.html">Shop</a></li><li><a href="coffee.html">Coffee Collection</a></li><li><a href="drinks.html">Signature Drinks</a></li><li><a href="events.html">Events</a></li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS B3H 0A6</li><li>Mon–Fri: 7:30am–6pm</li><li>Sat: 10am–5pm | Sun: 11am–5pm</li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><a href="https://www.instagram.com/glitterbeancafe/" target="_blank" rel="noopener">Instagram</a></div></div></div>
+        <div class="footer-bottom"><span>© 2026 Glitter Bean Café Co-op</span><span>Crafted with sparkle</span></div>
       </div>
     </footer>
       <script src="catalog.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>
-

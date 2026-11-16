@@ -1,0 +1,5 @@
+.backup_pre_upgrade/
+scratch/
+.system_generated/
+.DS_Store
+Thumbs.db

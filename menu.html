@@ -3,19 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Café Menu | Glitter Bean Café</title>
-    <meta name="description" content="Preview page for Café Menu | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <title>Menu | Glitter Bean Café Co-op — Halifax, NS</title>
+    <meta name="description" content="Explore the Glitter Bean Café Co-op menu. Specialty espresso, signature lattes, teas, baked goods, and locally sourced food at 5896 Spring Garden Road, Halifax." />
     <link rel="canonical" href="https://git-cafe-nine.vercel.app/menu.html" />
-    <meta property="og:title" content="Café Menu | Glitter Bean Café" />
-    <meta property="og:description" content="Preview page for Café Menu | Glitter Bean Café. Confirm current products, pricing, hours, and availability with Glitter Bean Café." />
+    <meta property="og:title" content="Menu | Glitter Bean Café Co-op — Halifax, NS" />
+    <meta property="og:description" content="Explore the Glitter Bean Café Co-op menu. Specialty espresso, signature lattes, teas, baked goods, and locally sourced food at 5896 Spring Garden Road, Halifax." />
     <meta property="og:url" content="https://git-cafe-nine.vercel.app/menu.html" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
+    <style>
+      .menu-disclaimer {
+        background: linear-gradient(135deg, #f9f0ff 0%, #fff0f6 100%);
+        border-left: 4px solid #c084fc;
+        border-radius: 8px;
+        padding: 18px 22px;
+        margin: 0 0 36px 0;
+        font-size: 0.95rem;
+        color: #5b2d8e;
+        line-height: 1.6;
+      }
+      .menu-disclaimer strong { color: #7c3aed; }
+
+      .diet-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 36px;
+      }
+      .diet-btn {
+        padding: 8px 20px;
+        border: 2px solid #c084fc;
+        border-radius: 999px;
+        background: transparent;
+        color: #7c3aed;
+        font-size: 0.88rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s;
+      }
+      .diet-btn.active, .diet-btn:hover {
+        background: #7c3aed;
+        color: #fff;
+        border-color: #7c3aed;
+      }
+
+      .menu-section { margin-bottom: 52px; }
+      .menu-section-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #3d1a6e;
+        border-bottom: 2px solid #e9d5ff;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        letter-spacing: 0.01em;
+      }
+      .menu-items { display: flex; flex-direction: column; gap: 0; }
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 16px 0;
+        border-bottom: 1px solid #f3e8ff;
+        gap: 16px;
+      }
+      .menu-item:last-child { border-bottom: none; }
+      .menu-item-info { flex: 1; }
+      .menu-item-name {
+        font-weight: 700;
+        font-size: 1.03rem;
+        color: #1e0a3c;
+        margin-bottom: 4px;
+      }
+      .menu-item-desc {
+        font-size: 0.9rem;
+        color: #5a4a6b;
+        line-height: 1.55;
+        margin-bottom: 6px;
+      }
+      .diet-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+      .diet-tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 2px 9px;
+        border-radius: 999px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .diet-tag.vegan { background: #d1fae5; color: #065f46; }
+      .diet-tag.gf { background: #fef3c7; color: #92400e; }
+      .diet-tag.dairy-free { background: #dbeafe; color: #1e40af; }
+
+      .menu-item-price {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #7c3aed;
+        white-space: nowrap;
+        text-align: right;
+        min-width: 140px;
+      }
+      .price-note {
+        display: block;
+        font-size: 0.72rem;
+        color: #9ca3af;
+        font-weight: 400;
+        margin-top: 2px;
+      }
+
+      .menu-item[data-hidden="true"] { display: none; }
+
+      @media (max-width: 600px) {
+        .menu-item { flex-direction: column; gap: 8px; }
+        .menu-item-price { text-align: left; min-width: unset; }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
       <div class="container navbar">
-        <a class="brand" href="index.html" aria-label="Home"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></a>
+        <a class="brand" href="index.html" aria-label="Home"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café Co-op</span></a>
         <nav class="top-nav" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="shop.html">Shop All</a>
@@ -54,46 +159,368 @@
           <div>
             <div class="breadcrumb">Menu</div>
             <h1>Café Menu</h1>
-            <p>Sample menu preview only. Confirm current offerings, ingredients, and prices with the café.</p>
+            <p>Specialty coffee, signature lattes, locally sourced food, and community at 5896 Spring Garden Road, Halifax.</p>
           </div>
-          <a class="primary-btn" href="drinks.html">See signature drinks</a>
+          <a class="primary-btn" href="contact.html">Visit Us</a>
         </div>
       </section>
 
       <section class="section">
-        <div class="container two-col">
-          <div class="contact-card">
-            <h3>Drinks</h3>
-            <div class="info-stack">
-              <div class="info-item"><strong>Espresso</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>Americano</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>Cappuccino</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>Bloom Latte</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>Velvet Mocha</strong><br />Sample menu concept; confirm with café.</div>
+        <div class="container">
+
+          <div class="menu-disclaimer">
+            <strong>A note on our menu:</strong> Our menu changes with the seasons and local availability. Prices shown are typical ranges — please confirm current prices and availability at the café. We proudly serve <strong>Just Us! Coffee Roasters Co-op</strong> beans (fair-trade, organic). Food is sourced from local Halifax partners.
+          </div>
+
+          <!-- Dietary Filter Buttons -->
+          <div class="diet-filters" role="group" aria-label="Filter by dietary preference">
+            <button class="diet-btn active" data-filter="all" onclick="filterMenu('all', this)">All</button>
+            <button class="diet-btn" data-filter="vegan" onclick="filterMenu('vegan', this)">Vegan</button>
+            <button class="diet-btn" data-filter="gf" onclick="filterMenu('gf', this)">Gluten-Free</button>
+            <button class="diet-btn" data-filter="dairy-free" onclick="filterMenu('dairy-free', this)">Dairy-Free</button>
+          </div>
+
+          <!-- SECTION 1: Signature Drinks -->
+          <div class="menu-section">
+            <div class="menu-section-title">✨ Signature Drinks</div>
+            <div class="menu-items">
+
+              <div class="menu-item" data-dietary="vegan dairy-free">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">The Fairy Latte</div>
+                  <div class="menu-item-desc">Our house specialty. A dreamy espresso latte with house-made lavender or rose syrup and oat milk. Ethereally delicious.</div>
+                  <div class="diet-tags">
+                    <span class="diet-tag vegan">Can be Vegan</span>
+                    <span class="diet-tag dairy-free">Can be Dairy-Free</span>
+                  </div>
+                </div>
+                <div class="menu-item-price">
+                  $6.25–$6.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="vegan dairy-free">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Rainbow Glitter Latte</div>
+                  <div class="menu-item-desc">Halifax's most magical latte. Layered colours, edible glitter, your choice of house syrup.</div>
+                  <div class="diet-tags">
+                    <span class="diet-tag vegan">Can be Vegan</span>
+                    <span class="diet-tag dairy-free">Can be Dairy-Free</span>
+                  </div>
+                </div>
+                <div class="menu-item-price">
+                  $6.50–$6.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">London Fog</div>
+                  <div class="menu-item-desc">Earl Grey tea latte with vanilla and steamed milk.</div>
+                </div>
+                <div class="menu-item-price">
+                  $5.25–$5.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="vegan dairy-free">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Golden Turmeric Latte</div>
+                  <div class="menu-item-desc">Anti-inflammatory blend of turmeric, ginger, cinnamon, and oat milk.</div>
+                  <div class="diet-tags">
+                    <span class="diet-tag vegan">Vegan</span>
+                    <span class="diet-tag dairy-free">Dairy-Free</span>
+                  </div>
+                </div>
+                <div class="menu-item-price">
+                  $5.50–$5.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Matcha Latte</div>
+                  <div class="menu-item-desc">Ceremonial grade matcha with steamed oat or dairy milk.</div>
+                </div>
+                <div class="menu-item-price">
+                  $5.50–$6.00 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="vegan dairy-free">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Italian Soda</div>
+                  <div class="menu-item-desc">Handcrafted house syrup + sparkling water. Ask about today's flavours!</div>
+                  <div class="diet-tags">
+                    <span class="diet-tag vegan">Vegan</span>
+                    <span class="diet-tag dairy-free">Dairy-Free</span>
+                  </div>
+                </div>
+                <div class="menu-item-price">
+                  $4.75–$5.25 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
             </div>
           </div>
-          <div class="contact-card">
-            <h3>Bakery & light bites</h3>
-            <div class="info-stack">
-              <div class="info-item"><strong>Butter Croissant</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>Seasonal Scone</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>Breakfast Toast</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>Almond Raspberry Muffin</strong><br />Sample menu concept; confirm with café.</div>
-              <div class="info-item"><strong>House granola cup</strong><br />Sample menu concept; confirm with café.</div>
+
+          <!-- SECTION 2: Espresso & Coffee -->
+          <div class="menu-section">
+            <div class="menu-section-title">☕ Espresso &amp; Coffee</div>
+            <div class="menu-items">
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Double Espresso</div>
+                  <div class="menu-item-desc">Two shots of Just Us! organic espresso, pulled fresh.</div>
+                </div>
+                <div class="menu-item-price">
+                  $3.25–$3.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Americano</div>
+                  <div class="menu-item-desc">Espresso with hot water. Bold and clean.</div>
+                </div>
+                <div class="menu-item-price">
+                  $3.50–$4.00 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Cappuccino</div>
+                  <div class="menu-item-desc">Equal parts espresso, steamed milk, and foam.</div>
+                </div>
+                <div class="menu-item-price">
+                  $4.75–$5.25 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Café Latte</div>
+                  <div class="menu-item-desc">Espresso with steamed milk and your choice of syrup.</div>
+                </div>
+                <div class="menu-item-price">
+                  $5.00–$5.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Mocha</div>
+                  <div class="menu-item-desc">Espresso with chocolate and steamed milk.</div>
+                </div>
+                <div class="menu-item-price">
+                  $5.25–$5.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">House Drip Coffee</div>
+                  <div class="menu-item-desc">Fresh-brewed Just Us! drip. Free refills for Gem holders!</div>
+                </div>
+                <div class="menu-item-price">
+                  $3.00–$3.50 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="vegan dairy-free">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Cold Brew</div>
+                  <div class="menu-item-desc">Slow-steeped 20-hour cold brew concentrate.</div>
+                  <div class="diet-tags">
+                    <span class="diet-tag vegan">Vegan</span>
+                    <span class="diet-tag dairy-free">Dairy-Free</span>
+                  </div>
+                </div>
+                <div class="menu-item-price">
+                  $5.00–$5.50 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
             </div>
           </div>
+
+          <!-- SECTION 3: Teas & Warmers -->
+          <div class="menu-section">
+            <div class="menu-section-title">🍵 Teas &amp; Warmers</div>
+            <div class="menu-items">
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Loose Leaf Tea</div>
+                  <div class="menu-item-desc">Ethically sourced loose leaf teas, brewed to order. Ask about today's selection.</div>
+                </div>
+                <div class="menu-item-price">
+                  $3.50–$4.50 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Hot Chocolate</div>
+                  <div class="menu-item-desc">Rich, velvety house-made hot chocolate.</div>
+                </div>
+                <div class="menu-item-price">
+                  $4.50–$5.00 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- SECTION 4: Bakery & Treats -->
+          <div class="menu-section">
+            <div class="menu-section-title">🧁 Bakery &amp; Treats</div>
+            <div class="menu-items">
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Tart &amp; Soul Brownie</div>
+                  <div class="menu-item-desc">Fudgy chocolate brownie from Halifax's Tart &amp; Soul bakery.</div>
+                </div>
+                <div class="menu-item-price">
+                  $4.25–$4.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Daily Scone</div>
+                  <div class="menu-item-desc">Fresh-baked scone, rotating flavours. Ask at the counter!</div>
+                </div>
+                <div class="menu-item-price">
+                  $4.00–$4.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="vegan dairy-free">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Vegan Peanut Butter Cup</div>
+                  <div class="menu-item-desc">Dairy-free, decadent.</div>
+                  <div class="diet-tags">
+                    <span class="diet-tag vegan">Vegan</span>
+                    <span class="diet-tag dairy-free">Dairy-Free</span>
+                  </div>
+                </div>
+                <div class="menu-item-price">
+                  $3.75–$4.25 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="gf">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Schoolhouse GF Muffin</div>
+                  <div class="menu-item-desc">Gluten-free muffin from Schoolhouse GF Gourmet. Rotating flavours.</div>
+                  <div class="diet-tags">
+                    <span class="diet-tag gf">Gluten-Free</span>
+                  </div>
+                </div>
+                <div class="menu-item-price">
+                  $4.25–$4.75 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- SECTION 5: Food & Light Meals -->
+          <div class="menu-section">
+            <div class="menu-section-title">🥙 Food &amp; Light Meals</div>
+            <div class="menu-items">
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Staff of Life Samosas</div>
+                  <div class="menu-item-desc">Crispy, spiced samosas from Staff of Life bakery.</div>
+                </div>
+                <div class="menu-item-price">
+                  $5.00–$5.50 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Daily Panini</div>
+                  <div class="menu-item-desc">Rotating sandwich, made with local ingredients. Ask at the counter.</div>
+                </div>
+                <div class="menu-item-price">
+                  $7.50–$8.50 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+              <div class="menu-item" data-dietary="">
+                <div class="menu-item-info">
+                  <div class="menu-item-name">Soup of the Day</div>
+                  <div class="menu-item-desc">Warm, comforting soup, locally sourced.</div>
+                </div>
+                <div class="menu-item-price">
+                  $6.00–$7.00 CAD
+                  <span class="price-note">Confirm with café</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li>Shop</li><li>Coffee Collection</li><li>Subscriptions</li><li>Gift Cards</li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>Location and contact details are awaiting café confirmation.</li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><span>Social profiles pending owner confirmation</span></div></div></div>
-        <div class="footer-bottom"><span>© 2026 Glitter Bean Café</span><span>Crafted with sparkle</span></div>
+        <div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">GB</span><span class="brand-name">Glitter Bean Café Co-op</span></div><p style="margin-top: 18px; color: rgba(255,255,255,0.7); max-width: 350px;">Coffee, community and a little everyday magic for Halifax and beyond.</p></div><div><div class="footer-title">Explore</div><ul class="footer-links"><li><a href="shop.html" style="color:inherit;">Shop</a></li><li><a href="coffee.html" style="color:inherit;">Coffee Collection</a></li><li><a href="menu.html" style="color:inherit;">Café Menu</a></li><li><a href="story.html" style="color:inherit;">Our Story</a></li></ul></div><div><div class="footer-title">Visit</div><ul class="footer-links"><li>5896 Spring Garden Road</li><li>Halifax, NS B3H 0A6</li><li>(902) 407-5715</li></ul></div><div><div class="footer-title">Follow Along</div><div class="footer-link-row"><a href="https://www.instagram.com/glitterbeancafe/" style="color:inherit;">Instagram</a></div><div class="footer-link-row"><a href="https://www.facebook.com/glitterbeancafe/" style="color:inherit;">Facebook</a></div></div></div>
+        <div class="footer-bottom"><span>© 2026 Glitter Bean Café Co-op</span><span>Crafted with sparkle ✨</span></div>
       </div>
     </footer>
-      <script src="catalog.js"></script>
-    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+    <script src="script.js?v=3"></script>
+    <script>
+      function filterMenu(filter, btn) {
+        // Update button states
+        document.querySelectorAll('.diet-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        // Show/hide items
+        document.querySelectorAll('.menu-item').forEach(function(item) {
+          if (filter === 'all') {
+            item.removeAttribute('data-hidden');
+          } else {
+            var dietary = item.getAttribute('data-dietary') || '';
+            if (dietary.indexOf(filter) !== -1) {
+              item.removeAttribute('data-hidden');
+            } else {
+              item.setAttribute('data-hidden', 'true');
+            }
+          }
+        });
+      }
+    </script>
   </body>
 </html>
-
